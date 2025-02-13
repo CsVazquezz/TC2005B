@@ -1,65 +1,216 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carlos Martínez Vázquez - Página Personal</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header, nav, main, footer { padding: 20px; margin: 10px; background: white; border-radius: 8px; }
-        nav ul { list-style: none; padding: 0; }
-        nav ul li { display: inline; margin-right: 15px; }
-        section { margin-bottom: 20px; }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header,
+      nav,
+      main,
+      footer {
+        padding: 20px;
+        margin: 10px;
+        background: white;
+        border-radius: 8px;
+      }
+      nav ul {
+        list-style: none;
+        padding: 0;
+      }
+      nav ul li {
+        display: inline;
+        margin-right: 15px;
+      }
+      section {
+        margin-bottom: 20px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Carlos Manuel Martínez Vázquez</h1>
-        <p>Estudiante Ingeniera en Tecnologias Computacionales | Apasionado por la tecnología y la innovación</p>
+      <h1>Carlos Manuel Martínez Vázquez</h1>
+      <p>
+        Estudiante Ingeniera en Tecnologias Computacionales | Apasionado por la
+        tecnología y la innovación
+      </p>
     </header>
-    
+
     <nav>
-        <ul>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#aficiones">Aficiones</a></li>
-            <li><a href="#preguntas">preguntas</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+      <ul>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#aficiones">Aficiones</a></li>
+        <li><a href="#preguntas">preguntas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
-    
+
     <main>
-        <div id="proyectos">
-            <h2>Mis Proyectos</h2>
-            <article>
-                <h3>CampusCribs</h3>
-                <p>Desarrollo de una plataforma web para calificar residencias estudiantiles.</p>
-            </article>
-            <article>
-                <h3>Fluxos</h3>
-                <p>Plataforma de gestión de datos con Express.js.</p>
-            </article>
-        </div>
-        
-        <div id="aficiones">
-            <h2>Mis Aficiones</h2>
-            <p>Me interesa el desarrollo de software, los deportes como el futbol y la NFL.</p>
-        </div>
-        
-        <div id="preguntas">
-            <h2>Preguntas</h2>
-            <p></p>
-        </div>
+      <div id="proyectos">
+        <h2>Mis Proyectos</h2>
+        <article>
+          <h3>CampusCribs</h3>
+          <p>
+            Desarrollo de una plataforma web para calificar residencias
+            estudiantiles.
+          </p>
+        </article>
+        <article>
+          <h3>Fluxos</h3>
+          <p>Plataforma de gestión de datos con Express.js.</p>
+        </article>
+      </div>
 
-        <div id="contacto">
-            <h2>Contacto</h2>
-            <p> + 55 7465 6116 </p>
-            <p> A01711730@tec.mx </p>
-        </div>
+      <div id="aficiones">
+        <h2>Mis Aficiones</h2>
+        <p>
+          Me interesa el desarrollo de software, los deportes como el futbol y
+          la NFL.
+        </p>
+      </div>
 
+      <div id="preguntas">
+        <h2>Preguntas</h2>
+
+        <h3>¿Cuál es la diferencia entre Internet y la World Wide Web?</h3>
+        <p>
+          Internet es la infraestructura global de redes que permite la
+          comunicación. La World Wide Web (WWW) es un
+          servicio que opera sobre Internet y permite acceder a documentos y
+          recursos interconectados mediante hipervínculos.
+        </p>
+
+        <h3>¿Cuáles son las partes de un URL?</h3>
+        <p>Las partes principales de un URL son:</p>
+        <ul>
+          <li>Protocolo (ej. HTTP, HTTPS)</li>
+          <li>Dominio o dirección IP</li>
+          <li>Puerto (opcional)</li>
+          <li>Ruta del recurso</li>
+          <li>Parámetros de consulta (query parameters)</li>
+          <li>Fragmento o ancla (opcional)</li>
+        </ul>
+
+        <h3>
+          ¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT,
+          PATCH, DELETE?
+        </h3>
+        <ul>
+          <li>
+            <strong>GET:</strong> Solicita datos sin modificar el estado del
+            servidor.
+          </li>
+          <li>
+            <strong>HEAD:</strong> Igual que GET, pero solo devuelve los
+            encabezados.
+          </li>
+          <li>
+            <strong>POST:</strong> Envía datos al servidor para crear un
+            recurso.
+          </li>
+          <li>
+            <strong>PUT:</strong> Actualiza un recurso existente o lo crea si no
+            existe.
+          </li>
+          <li><strong>PATCH:</strong> Modifica parcialmente un recurso.</li>
+          <li><strong>DELETE:</strong> Elimina un recurso.</li>
+        </ul>
+
+        <h3>¿Qué método HTTP se debe utilizar al enviar un formulario HTML?</h3>
+        <p>
+          El método <strong>POST</strong> se debe utilizar porque permite enviar
+          datos de forma segura y no expone la información en la URL.
+        </p>
+
+        <h3>¿Qué método HTTP se utiliza al acceder a una página web?</h3>
+        <p>
+          El método <strong>GET</strong> es el que se utiliza al ingresar un URL
+          en el navegador.
+        </p>
+
+        <h3>Un servidor web devuelve un código HTTP 200. ¿Qué significa?</h3>
+        <p>Significa que la solicitud fue exitosa y no ocurrió ningún error.</p>
+
+        <h3>¿Es responsabilidad del desarrollador corregir un error 404?</h3>
+        <p>
+          No siempre. Un error 404 significa que el recurso no se encontró.
+          Puede deberse a un enlace roto o a que el usuario ingresó mal la URL.
+        </p>
+
+        <h3>¿Es responsabilidad del desarrollador corregir un error 500?</h3>
+        <p>
+          Sí, porque un error 500 indica un problema interno del servidor que
+          debe ser corregido por el desarrollador.
+        </p>
+
+        <h3>¿Qué significa que un atributo HTML5 esté depreciado?</h3>
+        <p>
+          Significa que se desaconseja su uso y podría ser eliminado en futuras
+          versiones. Ejemplos de elementos desaprobados de HTML 4 en HTML5
+          incluyen &lt;font&gt; y &lt;center&gt;.
+        </p>
+
+        <h3>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?</h3>
+        <ul>
+          <li>
+            HTML5 permite el uso de etiquetas semánticas como &lt;article&gt;,
+            &lt;section&gt;, &lt;header&gt;, etc.
+          </li>
+          <li>Soporta reproducción de audio y video sin plugins.</li>
+          <li>Mejor compatibilidad con dispositivos móviles.</li>
+        </ul>
+
+        <h3>¿Qué componentes de estructura y estilo tiene una tabla?</h3>
+        <ul>
+          <li>&lt;table&gt;: Contenedor principal.</li>
+          <li>&lt;tr&gt;: Filas.</li>
+          <li>&lt;th&gt; y &lt;td&gt;: Encabezados y celdas.</li>
+          <li>&lt;caption&gt;: Título de la tabla.</li>
+        </ul>
+
+        <h3>¿Cuáles son los principales controles de una forma HTML5?</h3>
+        <ul>
+          <li>Campos de texto (&lt;input type="text"&gt;)</li>
+          <li>Botones de envío (&lt;input type="submit"&gt;)</li>
+          <li>Controles numéricos (&lt;input type="number"&gt;)</li>
+          <li>Controles de fecha (&lt;input type="date"&gt;)</li>
+        </ul>
+
+        <h3>¿Qué tanto soporte HTML5 tiene el navegador que utilizas?</h3>
+        <p>
+          Para conocer el soporte HTML5 de mi navegador (Safari o Chrome) puedo
+          visitar:
+          <a href="http://html5test.com/" target="_blank">html5test.com</a>.
+        </p>
+
+        <h3>¿Cuál es el ciclo de vida de los sistemas de información?</h3>
+        <p>
+          Incluye planificación, análisis, diseño, implementación, mantenimiento
+          y evaluación.
+        </p>
+
+        <h3>¿Cuál es el ciclo de desarrollo de sistemas de información?</h3>
+        <p>
+          Se compone de requerimientos, diseño, desarrollo, pruebas,
+          implementación y mantenimiento.
+        </p>
+      </div>
+
+      <div id="contacto">
+        <h2>Contacto</h2>
+        <p>+ 55 7465 6116</p>
+        <p>A01711730@tec.mx</p>
+      </div>
     </main>
-    
+
     <footer>
-        <p>&copy; 2025 Carlos Martínez Vázquez | Todos los derechos reservados</p>
+      <p>&copy; 2025 Carlos Martínez Vázquez | Todos los derechos reservados</p>
     </footer>
-</body>
+  </body>
 </html>
