@@ -1,0 +1,15 @@
+//Agregar nuevo branck al repo
+git checkout -b [nombre_branch]
+
+//Cambiar de rama
+git checkout [nombre-branch]
+
+//Agregar cambios 
+git add -A
+
+//Guardar los cambios de transaccion
+git commit -m "[cambios]"
+
+//Sincronizar cambios de un branch al main
+git checkout main 
+git merge develop
