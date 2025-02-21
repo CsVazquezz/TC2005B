@@ -69,3 +69,56 @@ document.getElementById("exercise6").onclick = function () {
   document.getElementById("output").innerHTML =
     `<p>${persona.saludar()} ${persona.esMayor()}</p>`;
 };
+
+document.addEventListener("DOMContentLoaded", function () {
+  const passwordField = document.getElementById("password");
+  const confirmPasswordField = document.getElementById("confirmPassword");
+  const helpText = document.getElementById("helpText");
+  const submitButton = document.getElementById("submitButton");
+
+  passwordField.addEventListener("input", function () {
+    if (passwordField.value.length < 8) {
+      helpText.textContent = "La contraseña debe tener al menos 8 caracteres.";
+      helpText.classList.add("is-danger");
+    } else {
+      helpText.textContent = "";
+      helpText.classList.remove("is-danger");
+    }
+  });
+
+  confirmPasswordField.addEventListener("input", function () {
+    if (confirmPasswordField.value !== passwordField.value) {
+      helpText.textContent = "Las contraseñas no coinciden.";
+      helpText.classList.add("is-danger");
+    } else {
+      helpText.textContent = "";
+      helpText.classList.remove("is-danger");
+    }
+  });
+
+  submitButton.addEventListener("mouseover", function () {
+    submitButton.style.fontStyle = "italic";
+  });
+
+  submitButton.addEventListener("mouseout", function () {
+    submitButton.style.fontStyle = "normal";
+  });
+
+  submitButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (
+      passwordField.value === confirmPasswordField.value &&
+      passwordField.value.length >= 8
+    ) {
+      helpText.textContent = "Contraseña válida.";
+      helpText.classList.remove("is-danger");
+      helpText.classList.add("is-success");
+      setTimeout(() => {
+        alert("Formulario enviado con éxito.");
+      }, 1000);
+    } else {
+      helpText.textContent = "Por favor, corrija los errores antes de enviar.";
+      helpText.classList.add("is-danger");
+    }
+  });
+});

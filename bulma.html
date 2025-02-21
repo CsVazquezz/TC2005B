@@ -26,6 +26,39 @@
         <div id="output" class="content mt-4"></div>
       </div>
     </section>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Validador de Contraseñas</h1>
+        <form>
+          <div class="field">
+            <label class="label">Contraseña</label>
+            <div class="control">
+              <input
+                class="input"
+                type="password"
+                id="password"
+                placeholder="Ingrese su contraseña"
+              />
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">Confirmar Contraseña</label>
+            <div class="control">
+              <input
+                class="input"
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirme su contraseña"
+              />
+            </div>
+          </div>
+          <p id="helpText" class="help"></p>
+          <div class="control">
+            <button class="button is-primary" id="submitButton">Validar</button>
+          </div>
+        </form>
+      </div>
+    </section>
     <script src="script.js"></script>
   </body>
 </html>
