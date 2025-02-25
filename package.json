@@ -4,6 +4,7 @@
   "description": "Lab 11 TC2005B",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
