@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/CsVazquezz/TC2005B/issues"
   },
-  "homepage": "https://github.com/CsVazquezz/TC2005B#readme"
+  "homepage": "https://github.com/CsVazquezz/TC2005B#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }

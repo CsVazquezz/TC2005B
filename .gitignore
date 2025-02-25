@@ -1,2 +1,7 @@
 #ignore json
 .settings.json
+
+node_modules/
+dist/
+
+.DS_Storenp
