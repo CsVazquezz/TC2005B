@@ -3,9 +3,9 @@ const bodyParser = require("body-parser");
 const app = express();
 
 // Import routes
-const productsRoutes = require("./routes/products.routes");
-const usersRoutes = require("./routes/users.routes");
-const mainRoutes = require("./routes/main.routes");
+const productsRoutes = require("../Lab11/routes/products.routes");
+const usersRoutes = require("../Lab11/routes/users.routes");
+const mainRoutes = require("../Lab11/routes/main.routes");
 
 // Middleware to log requests
 app.use((request, response, next) => {

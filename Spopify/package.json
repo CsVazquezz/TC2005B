@@ -1,0 +1,22 @@
+{
+  "name": "lab11",
+  "version": "1.0.0",
+  "description": "Lab directory for Leo C",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Leonardo Cervantes",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.1",
+    "mysql2": "^3.13.0",
+    "nodemon": "^3.1.9"
+  }
+}
