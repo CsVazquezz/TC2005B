@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= typeof title !== 'undefined' ? title : 'Your App' %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        spotify: {
+                            green: '#1DB954',
+                            black: '#191414',
+                            white: '#FFFFFF',
+                            gray: '#B3B3B3',
+                            darkgray: '#535353'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            @apply bg-spotify-black text-spotify-white;
+        }
+        .btn-spotify {
+            @apply bg-spotify-green text-spotify-black font-bold py-2 px-4 rounded hover:bg-opacity-80;
+        }
+        .navbar {
+            @apply bg-black p-4;
+        }
+        .sidebar {
+            @apply bg-black w-64 p-4 h-screen;
+        }
+        .card {
+            @apply bg-spotify-darkgray rounded-lg p-4 hover:bg-opacity-80;
+        }
+        .nav-link {
+            @apply text-spotify-white hover:text-spotify-green transition-colors duration-200;
+        }
+        .nav-link.active {
+            @apply text-spotify-green font-medium;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+    </header>
+    <div class="min-h-screen flex flex-col">
+        <nav class="navbar flex justify-between items-center">
+            <div class="text-spotify-green text-xl font-bold">Spopify</div>
+            <div class="flex items-center space-x-6">
+                <a href="/" class="nav-link flex items-center">
+                    <i class="fas fa-home mr-1"></i> Inicio
+                </a>
+                <a href="/canciones" class="nav-link flex items-center">
+                    <i class="fas fa-music mr-1"></i> Canciones
+                </a>
+                <a href="/playlists" class="nav-link flex items-center">
+                    <i class="fas fa-list-ul mr-1"></i> Playlists
+                </a>
+                <a href="/plataformas" class="nav-link flex items-center">
+                    <i class="fas fa-podcast mr-1"></i> Plataformas
+                </a>
+                
+                <% if (isLoggedIn) { %>
+                    <div class="flex items-center space-x-4">
+                        <span class="text-spotify-gray">Bienvenido, <%= userName %></span>
+                        <form action="/auth/logout" method="POST" class="inline">
+                            <button type="submit" class="nav-link flex items-center">
+                                <i class="fas fa-sign-out-alt mr-1"></i> Cerrar sesión
+                            </button>
+                        </form>
+                    </div>
+                <% } else { %>
+                    <div class="flex items-center space-x-2">
+                        <a href="/auth/signin" class="btn-spotify">
+                            <i class="fas fa-sign-in-alt mr-1"></i> Iniciar sesión
+                        </a>
+                        <a href="/auth/signup" class="text-spotify-green hover:underline">
+                            Registrarse
+                        </a>
+                    </div>
+                <% } %>
+            </div>
+        </nav>
+        
+        <main class="flex-grow p-6">
+          
