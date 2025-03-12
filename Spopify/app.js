@@ -1,16 +1,17 @@
 const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser');
-const session = require('express-session');
-const cookieParser = require('cookie-parser');
-
 const app = express();
+
+const path = require('path');
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
+const session = require('express-session');
+
+const cookieParser = require('cookie-parser');
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: false }));
+
 app.use(session({
     secret: 'mi_string_secreto_spopify_2024',
     resave: false,
@@ -22,13 +23,19 @@ app.use(session({
     }
 }));
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+
+
+const csrf = require('csurf');
+const csrfProtection = csrf();
+app.use(csrfProtection); 
+
 app.use((req, res, next) => {
     res.locals.isLoggedIn = req.session.isLoggedIn || false;
     res.locals.userName = req.session.userName || null;
     next();
 });
-
-app.use(express.static(path.join(__dirname, 'public')));
 
 const rutasCanciones = require('./routes/canciones.routes');
 const rutasPlataformas = require('./routes/plataformas.routes');

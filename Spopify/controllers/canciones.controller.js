@@ -43,7 +43,8 @@ exports.getNew = (request, response, next) => {
         path: '/canciones',
         editing: false,
         hasStyles: true,
-        activeCancionesForm: true
+        activeCancionesForm: true,
+        csrfToken: request.csrfToken(),
     });
 };
 
@@ -82,7 +83,8 @@ exports.getEdit = async (request, response, next) => {
             editing: true,
             cancion: cancion,
             hasStyles: true,
-            activeCancionesForm: true
+            activeCancionesForm: true,
+            csrfToken: request.csrfToken(),
         });
     } catch (error) {
         console.log(error);

@@ -43,7 +43,8 @@ exports.getNew = async (request, response, next) => {
             titulo: 'Crear Nueva Playlist',
             canciones: canciones,
             plataformas: plataformas,
-            editing: false
+            editing: false,
+            csrfToken: request.csrfToken(),
         });
     } catch (error) {
         console.log(error);
@@ -99,7 +100,8 @@ exports.getEdit = async (request, response, next) => {
             playlist: playlist,
             canciones: canciones,
             plataformas: plataformas,
-            editing: true
+            editing: true,
+            csrfToken: request.csrfToken(),
         });
     } catch (error) {
         console.log(error);
