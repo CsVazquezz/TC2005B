@@ -16,6 +16,7 @@
         <% } %>
         
         <form action="<%= editing ? '/canciones/editar' : '/canciones/agregar' %>" method="POST" class="space-y-6">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <% if (editing) { %>
                 <input type="hidden" name="id" value="<%= cancion.id %>">
             <% } %>

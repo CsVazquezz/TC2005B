@@ -1,14 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const plataformasController = require('../controllers/plataformas.controller');
-
-const isAuth = (req, res, next) => {
-    if (!req.session.isLoggedIn) {
-        res.cookie('redirectTo', req.originalUrl, { httpOnly: true });
-        return res.redirect('/');
-    }
-    next();
-};
+const isAuth = require('../util/is-auth');
 
 router.get('/', plataformasController.getAll);
 

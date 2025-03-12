@@ -16,7 +16,8 @@ exports.getAll = async (request, response, next) => {
 exports.getNew = (request, response, next) => {
     response.render('plataformas/agregar', {
         titulo: 'Agregar una Nueva Plataforma',
-        editing: false
+        editing: false,
+        csrfToken: request.csrfToken(),
     });
 };
 
@@ -47,7 +48,8 @@ exports.getEdit = async (request, response, next) => {
         response.render('plataformas/agregar', {
             titulo: 'Editar Plataforma',
             plataforma: plataforma,
-            editing: true
+            editing: true,
+            csrfToken: request.csrfToken(),
         });
     } catch (error) {
         console.log(error);

@@ -16,6 +16,7 @@
         <% } %>
         
         <form action="<%= editing ? `/playlists/editar/${playlist.id}` : '/playlists/agregar' %>" method="POST" class="space-y-6">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="form-group">
                 <label for="nombre" class="block text-spotify-gray mb-2 font-medium">Nombre de la playlist *</label>
                 <input
