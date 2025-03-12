@@ -14,5 +14,19 @@ bower_components/
 
 # Build directories
 dist/
+build/
 
-.DS_Storenp
+# Environment variables
+.env
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS generated files
+.DS_Store
+Thumbs.db
