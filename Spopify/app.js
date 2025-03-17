@@ -8,10 +8,12 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const session = require('express-session');
-
 const cookieParser = require('cookie-parser');
-app.use(cookieParser());
+const bodyParser = require('body-parser');
+const csrf = require('csurf');
+const db = require('./util/database'); 
 
+app.use(cookieParser());
 app.use(session({
     secret: 'mi_string_secreto_spopify_2024',
     resave: false,
@@ -23,19 +25,36 @@ app.use(session({
     }
 }));
 
-const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
 
-
-const csrf = require('csurf');
 const csrfProtection = csrf();
-app.use(csrfProtection); 
+app.use(csrfProtection);
 
-app.use((req, res, next) => {
+app.use(async (req, res, next) => {
     res.locals.isLoggedIn = req.session.isLoggedIn || false;
     res.locals.userName = req.session.userName || null;
+    res.locals.csrfToken = req.csrfToken();
+    console.log('CSRF Token:', res.locals.csrfToken); 
+
+    if (req.session.userId) {
+        const [roles] = await db.query('SELECT r.name FROM roles r JOIN user_roles ur ON r.id = ur.role_id WHERE ur.user_id = ?', [req.session.userId]);
+        req.session.userRole = roles.length > 0 ? roles[0].name : 'guest';
+    } else {
+        req.session.userRole = 'guest';
+    }
+
     next();
 });
+
+function checkPermission(role) {
+    return (req, res, next) => {
+        if (req.session.userRole && req.session.userRole === role) {
+            next();
+        } else {
+            res.status(403).render('403', { title: 'Acceso Denegado' });
+        }
+    };
+}
 
 const rutasCanciones = require('./routes/canciones.routes');
 const rutasPlataformas = require('./routes/plataformas.routes');
@@ -57,6 +76,10 @@ app.get('/', (request, response, next) => {
         title: 'Inicio',
         lastVisit: request.cookies.lastVisit || 'Primera visita'
     });
+});
+
+app.get('/admin', checkPermission('admin'), (req, res, next) => {
+    res.render('admin', { title: 'Admin Page' });
 });
 
 app.use('/auth', rutasAuth);
