@@ -56,7 +56,7 @@ app.use(session({
 }));
 
 app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(bodyParser.json());
 
 app.use(multer({ storage: fileStorage, fileFilter: fileFilter }).single('archivo'));
 
@@ -95,7 +95,12 @@ app.get('/archivos/archivo/:id', async (req, res, next) => {
     }
 });
 
-const csrfProtection = csrf();
+
+const csrfProtection = csrf({
+    cookie: true,
+    ignoreMethods: ['GET', 'HEAD', 'OPTIONS']
+});
+
 app.use(csrfProtection);
 
 app.use(async (req, res, next) => {
