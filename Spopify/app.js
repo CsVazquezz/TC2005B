@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 
 const path = require('path');
+const fs = require('fs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.set('view engine', 'ejs');
@@ -12,6 +13,35 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const csrf = require('csurf');
 const db = require('./util/database'); 
+const multer = require('multer');
+
+
+const uploadsDir = path.join(__dirname, 'uploads');
+if (!fs.existsSync(uploadsDir)) {
+    console.log('Creating uploads directory...');
+    fs.mkdirSync(uploadsDir, { recursive: true });
+    console.log('Uploads directory created successfully.');
+}
+
+
+const fileStorage = multer.diskStorage({
+    destination: (request, file, callback) => {
+        callback(null, uploadsDir); 
+    },
+    filename: (request, file, callback) => {
+        callback(null, new Date().toISOString().replace(/:/g, '-') + '-' + file.originalname);
+    },
+});
+
+const fileFilter = (request, file, callback) => {
+    if (file.mimetype == 'image/png' || 
+        file.mimetype == 'image/jpg' ||
+        file.mimetype == 'image/jpeg') {
+        callback(null, true);
+    } else {
+        callback(null, false);
+    }
+};
 
 app.use(cookieParser());
 app.use(session({
@@ -26,6 +56,44 @@ app.use(session({
 }));
 
 app.use(bodyParser.urlencoded({ extended: false }));
+
+
+app.use(multer({ storage: fileStorage, fileFilter: fileFilter }).single('archivo'));
+
+
+app.use('/uploads', (req, res, next) => {
+    
+    return res.status(403).render('403', { title: 'Acceso Denegado' });
+});
+
+
+app.get('/archivos/archivo/:id', async (req, res, next) => {
+    try {
+        const Archivo = require('./models/archivo.model');
+        const archivo = await Archivo.findById(req.params.id);
+        
+        if (!archivo || !archivo.file_data) {
+            return res.status(404).render('404', { title: 'Archivo no encontrado' });
+        }
+        
+        
+        res.set('Content-Type', archivo.mimetype);
+       
+        if (req.query.download === 'true') {
+            res.set('Content-Disposition', `attachment; filename="${encodeURIComponent(archivo.nombre)}"`);
+        }
+        
+        
+        res.send(archivo.file_data);
+        
+    } catch (error) {
+        console.error('Error serving file:', error);
+        res.status(500).render('500', { 
+            title: 'Error interno', 
+            error: 'No se pudo obtener el archivo solicitado' 
+        });
+    }
+});
 
 const csrfProtection = csrf();
 app.use(csrfProtection);
@@ -60,6 +128,7 @@ const rutasCanciones = require('./routes/canciones.routes');
 const rutasPlataformas = require('./routes/plataformas.routes');
 const rutasPlaylists = require('./routes/playlists.routes');
 const rutasAuth = require('./routes/auth.routes');
+const rutasArchivos = require('./routes/archivos.routes');
 
 app.use((request, response, next) => {
     console.log(`Solicitud: ${request.method} ${request.url}`);
@@ -86,6 +155,7 @@ app.use('/auth', rutasAuth);
 app.use('/canciones', rutasCanciones);
 app.use('/plataformas', rutasPlataformas);
 app.use('/playlists', rutasPlaylists);
+app.use('/archivos', rutasArchivos);
 
 app.use((req, res, next) => {
     res.status(404).render('404', { title: 'Página no encontrada' });
