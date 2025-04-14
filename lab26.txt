@@ -1,0 +1,3 @@
+LAB 26 - Pair programming con Leo Cervantes
+
+link: https://github.com/OnyxDude/TC2005/commit/2449b524417798a6b970929c77b735073b5630d6
