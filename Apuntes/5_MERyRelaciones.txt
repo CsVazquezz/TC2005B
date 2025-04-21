@@ -1,0 +1,79 @@
+Notación Modelo Entidad-Relación (MER)
+	•	Objetivo: Crear esquemas que almacenen información con mínima redundancia y fácil recuperación.
+	•	Problemas en diseño deficiente:
+	•	Redundancia e inconsistencia.
+	•	Datos nulos innecesarios.
+	•	Desperdicio de espacio y dificultad en actualizaciones.
+
+Fases del diseño de BD:
+	1.	Recolección y análisis de requerimientos.
+	2.	Diseño conceptual (Modelo E-R).
+	3.	Diseño lógico (transformación al modelo relacional).
+	4.	Diseño físico (estructuras internas de almacenamiento).
+
+Modelo E-R (Entidad-Relación)
+	•	Propuesto por Peter Chen (1976).
+	•	Representación gráfica para modelar datos con entidades, asociaciones y atributos.
+
+
+Entidades:
+	•	Representan objetos del mundo real.
+	•	Se representan con rectángulos.
+	•	Deben tener existencia propia, identificador único y mismos atributos.
+
+Asociaciones (relaciones):
+	•	Representan vínculos o acciones entre entidades.
+	•	Se representan con rombos.
+	•	Pueden tener atributos descriptivos (ej. fecha_venta).
+
+Grado y Cardinalidad:
+	•	Grado: número de entidades en una relación (usualmente 2).
+	•	Cardinalidad:
+	•	1:1 (uno a uno)
+	•	1:N (uno a muchos)
+	•	N:N (muchos a muchos)
+
+Tipos de participación:
+	•	Opcional (parcial): línea sencilla.
+	•	Obligatoria (total): línea doble.
+
+Atributos:
+	•	Se representan con elipses.
+	•	Tipos:
+	•	Simples / Compuestos
+	•	Monovaluados / Multivaluados (doble línea)
+	•	Almacenados / Derivados (línea discontinua)
+	•	Dominio: conjunto de valores posibles de un atributo.
+
+Identificador (Clave):
+	•	Uno o más atributos que identifican una entidad.
+	•	Se subraya el atributo clave en el diagrama.
+
+Metodología MER:
+	1.	Identificar entidades.
+	2.	Agregar atributos.
+	3.	Definir identificadores.
+	4.	Identificar asociaciones (verbos).
+	5.	Definir cardinalidades.
+	6.	Atributos en asociaciones N:N.
+	7.	Verificar con requerimientos.
+
+Extensiones del modelo E-R
+	•	Roles: cuando una entidad juega varios papeles (ej. Ciudad como origen/destino).
+	•	Generalización / Especialización (ISA):
+	•	Superclase / Subclase
+	•	Se representa con triángulo.
+	•	Disjunta (d) o Solapada (o).
+
+Entidades fuertes y débiles:
+	•	Fuertes: existen por sí mismas (línea simple).
+	•	Débiles: dependen de otra entidad (línea doble).
+
+Restricciones de integridad:
+	•	Implícitas: derivadas del modelo (ej. relaciones válidas).
+	•	Adicionales:
+	•	Cotas de cardinalidad (ej. 0:5).
+	•	Predicados lógicos (ej. Empleado.Sueldo < Jefe.Sueldo).
+	•	Tipos de restricciones:
+	•	Recursos humanos, ecológicos, tiempo, instalaciones, transporte, financieros, materiales.
+

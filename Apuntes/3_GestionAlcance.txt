@@ -1,0 +1,37 @@
+Gestión del Alcance del Proyecto
+	•	Gestión del alcance: Asegura que el proyecto incluya todo y solo el trabajo necesario para completarlo exitosamente.
+	•	Alcance del proyecto: Suma de productos y servicios a entregar. Define qué sí y qué no se incluye.
+	•	SMART: Objetivos deben ser específicos, medibles, alcanzables, realistas y con límite de tiempo.
+
+
+	•	Alcance del producto: Características/funciones que debe tener el producto final.
+	•	Alcance del proyecto: Trabajo requerido para entregar el producto con esas características.
+
+Procesos de Gestión del Alcance
+	1.	Iniciación:
+	•	Autoriza formalmente el proyecto.
+	•	Asigna jefe de proyecto.
+	•	Se emite el Acta del Proyecto con objetivos, criterios de éxito, roles y restricciones.
+	2.	Planificación del alcance:
+	•	Se redacta el enunciado del alcance: justificación, entregables, objetivos (SMART).
+	•	Se desarrolla el plan de gestión del alcance, incluyendo cómo se controlarán los cambios.
+	3.	Definir el alcance:
+	•	Se subdivide el trabajo en partes manejables.
+	•	Se identifican los entregables y paquetes de trabajo (work packages).
+	4.	Work Breakdown Structure (WBS / EDT):
+	•	Descompone el trabajo del proyecto de forma jerárquica.
+	•	Reglas clave:
+	•	Cada elemento representa un entregable medible.
+	•	Los entregables deben descomponerse hasta un nivel que permita control efectivo.
+	•	Se debe modificar si hay cambios aceptados en el alcance.
+	5.	Verificación del alcance:
+	•	Aceptación formal de entregables por parte del cliente.
+	•	Uso de inspecciones (revisiones, auditorías, ensayos) para comprobar cumplimiento.
+	6.	Control del alcance:
+	•	Asegura que los cambios al alcance pasen por un proceso formal.
+	•	Evita el “Scope Creep” (cambios no autorizados).
+
+Complementos del WBS
+	•	OBS (Organizational Breakdown Structure): Descompone organizaciones responsables.
+	•	RAM (Responsibility Assignment Matrix): Asignación de responsabilidades.
+	•	Diccionario del EDT: Catálogo con descripciones, calendario, costos, calidad, etc.

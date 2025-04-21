@@ -1,0 +1,46 @@
+Introducción a los Sistemas de Información
+	•	Revolución tecnológica:
+	•	Avances permiten automatizar tareas rutinarias.
+	•	Acceso masivo a información mediante redes y bases de datos.
+	•	Integración de TI en la estrategia empresarial.
+	•	Uso de tecnologías:
+	•	Brindan ventajas competitivas.
+	•	Directivos deben tener visión global de los SI.
+	•	Sistema de información (definición):
+	•	Conjunto de componentes que recopilan, procesan, almacenan y distribuyen información para apoyar decisiones y control organizacional (Laudon y Laudon, 2004).
+
+ Elementos del Sistema de Información
+	•	Dato: representación simbólica sin significado por sí misma.
+	•	Información: conjunto organizado de datos con valor.
+	•	Entrada: información introducida por el usuario o dispositivos.
+	•	Procesamiento: acciones para clasificar, validar y generar información útil.
+	•	Salida: información generada para el usuario (gráficos, resultados).
+	•	Retroalimentación: valor añadido para mejorar decisiones o el sistema.
+
+Perspectiva de negocio (Andreu y Ricart, 1996):
+	•	Procesos formales que usan datos estructurados para operar y dirigir la empresa según su estrategia.
+
+Tipos de Sistemas de Información
+	•	TPS (Transaction Processing Systems):
+	•	Apoyan actividades diarias.
+	•	Características: alto volumen, repetición, almacenamiento masivo.
+	•	Tipos: en línea, por lotes, en tiempo real.
+	•	OAS (Office Automation Systems):
+	•	Aumentan productividad (correo, agendas, procesadores).
+	•	KWS (Knowledge Work Systems):
+	•	Apoyan creación de nuevo conocimiento (ej. diseño arquitectónico).
+	•	MIS (Management Information Systems):
+	•	Proveen información para decisiones organizacionales.
+	•	Tipos de reportes: programados, por demanda, por excepción.
+	•	DSS (Decision Support Systems):
+	•	Apoyan decisiones semi/no estructuradas.
+	•	Análisis “What if?”, búsqueda de metas.
+	•	Manejo de grandes datos, múltiples fuentes, visualización gráfica.
+	•	GDSS (Group Decision Support Systems):
+	•	Apoyo a decisiones grupales.
+	•	Características: facilidad de uso, flexibilidad, entradas anónimas.
+	•	ES (Expert Systems):
+	•	Simulan el razonamiento de un experto humano.
+	•	EIS (Executive Information Systems):
+	•	Apoyan decisiones no estructuradas.
+	•	Presentan información crítica de forma gráfica y segura.

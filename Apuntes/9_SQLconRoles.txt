@@ -1,0 +1,97 @@
+SQL con Roles
+
+Introducción
+- En ocasiones es necesario hacer consultas que involucran a una misma tabla más de una vez.
+- Esto ocurre para comparar subconjuntos de tuplas o cuando una tabla juega múltiples roles.
+- SQL ofrece mecanismos para manejar estas situaciones mediante alias y sinónimos.
+
+Consultas con roles usando alias
+- Los alias permiten renombrar temporalmente una tabla dentro de una consulta.
+- Se definen en la cláusula FROM: "tabla AS alias" o simplemente "tabla alias".
+- Permiten referencias no ambiguas a columnas de la misma tabla en diferentes roles.
+
+Ejemplo de viajes entre ciudades:
+- Modelo: Viajes relacionados con Ciudades mediante asociaciones "Parten" y "Llegan".
+- Tablas:
+  * viajes(idviaje, idorigen, iddestino, fecha)
+  * ciudades(idciudad, nombreciudad)
+
+- Consulta con alias para los roles de origen y destino:
+  SELECT idviaje, origen.nombre, destino.nombre, fecha
+  FROM viajes, ciudades origen, ciudades destino
+  WHERE viajes.idorigen = origen.idciudad AND
+        viajes.iddestino = destino.idciudad
+
+Sinónimos en SQL
+- Permiten crear nombres alternativos permanentes para tablas.
+- Sintaxis: CREATE SYNONYM sinónimo FOR nombretabla
+- No crean copias de datos, solo referencias alternativas.
+
+- Ejemplo con sinónimos:
+  CREATE SYNONYM origen FOR ciudades
+  CREATE SYNONYM destino FOR ciudades
+  
+  SELECT idviaje, origen.nombre, destino.nombre, fecha
+  FROM viajes, origen, destino
+  WHERE viajes.idorigen = origen.idciudad AND
+        viajes.iddestino = destino.idciudad
+
+Relaciones reflexivas
+- Cuando una entidad se relaciona consigo misma (como empleados y sus jefes).
+- Tabla: empleados(idempleado, nombre, idjefe)
+- La consulta requiere alias para distinguir roles:
+  SELECT e.nombre empleado, j.nombre jefe
+  FROM empleados e, empleados j
+  WHERE e.idjefe=j.idempleado
+
+- Alternativa con sinónimo:
+  CREATE SYNONYM jefes FOR empleados
+  
+  SELECT empleados.nombre empleado, jefes.nombre jefe
+  FROM empleados, jefes
+  WHERE empleados.idjefe=jefes.idempleado
+
+Comparación entre subconjuntos
+- Ejemplo con ventas diarias comparando fechas diferentes:
+  SELECT p.idproducto, p.descripcion, vprimero.cantidad-vsegundo.cantidad diferencia
+  FROM productos p, ventasdiarias vprimero, ventasdiarias vsegundo
+  WHERE p.idproducto=vprimero.idproducto AND
+        p.idproducto=vsegundo.idproducto AND
+        vprimero.fecha = '1-SEP-00' AND
+        vsegundo.fecha = '2-SEP-00'
+
+Subconsultas
+- Permiten utilizar el resultado de una consulta como criterio de selección.
+- Útiles para encontrar registros no asociados o hacer cálculos complejos.
+
+Tipos de subconsultas:
+1. Con operadores de conjunto (MINUS/EXCEPT):
+   (SELECT idproducto FROM productos)
+   MINUS
+   (SELECT idproducto FROM ventasdiarias)
+
+2. Con operador IN (pertenencia):
+   SELECT idproducto FROM productos
+   WHERE idproducto NOT IN (SELECT idproducto FROM ventasdiarias)
+
+3. Con operador EXISTS (existencia):
+   SELECT idproducto FROM productos p
+   WHERE NOT EXISTS
+      (SELECT * FROM ventasdiarias v WHERE v.idproducto = p.idproducto)
+
+4. Como expresión de comparación:
+   SELECT idproducto, descripcion FROM productos p
+   WHERE 100000 < (SELECT SUM(v.cantidad*p.precio)
+                  FROM ventasdiarias v
+                  WHERE v.idproducto=p.idproducto)
+
+Sintaxis general para subconsultas:
+- Operador IN: 
+  expresión [NOT] IN (SELECT columnas FROM tablas WHERE condiciones)
+
+- Comparadores con cuantificadores:
+  expresión {> | < | = | != | <> | >= | <= } [{ANY | SOME | ALL}]
+  (SELECT columnas FROM tablas WHERE condiciones)
+
+- Operador EXISTS:
+  [NOT] EXISTS (SELECT * FROM tablas WHERE condiciones)

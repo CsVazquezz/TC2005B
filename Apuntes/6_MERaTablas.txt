@@ -1,0 +1,41 @@
+Reglas de Traslado del Modelo Entidad Relación a Tablas
+
+Introducción
+- El modelo entidad-relación (MER) debe traducirse al modelo relacional (MR) para ser implementado como base de datos.
+- Se utilizan tablas con columnas; las columnas subrayadas indican la llave primaria (valores únicos).
+
+Procedimiento de transferencia
+1. Por cada entidad:
+   - Crear una tabla con el mismo nombre.
+   - Cada atributo se convierte en una columna.
+   - El identificador de la entidad se convierte en la llave primaria.
+   - Si no hay identificador, se crea una llave primaria artificial.
+
+2. Asociación N:N:
+   - Crear una tabla con los identificadores de ambas entidades + atributos de la asociación.
+   - La llave primaria es la concatenación de las llaves primarias de ambas entidades.
+
+3. Asociación 1:N:
+   - Agregar la llave primaria de la entidad del lado "1" a la tabla del lado "N".
+   - No se crea nueva tabla.
+
+4. Asociación 1:1:
+   - Agregar la llave primaria de una entidad a la otra.
+   - El orden no importa.
+
+
+Reglas para elementos adicionales del MER
+
+Relaciones ISA:
+- Son relaciones 1:1.
+- Las subclases heredan el identificador de la superclase.
+- La llave primaria es la misma en la superclase y subclases.
+
+
+Entidades fuertes y débiles:
+- Caso particular de 1:N.
+- La tabla débil incluye la llave de la entidad fuerte + identificador interno.
+
+Roles:
+- Utilizados en relaciones reflexivas o múltiples entre la misma pareja de entidades.
+- Se renombran columnas usando los nombres de los roles.

@@ -1,0 +1,47 @@
+Bases de Datos y DBMS - Definición y Justificación
+	•	Antes del enfoque de bases de datos:
+	•	Archivos eran dependientes de los programas.
+	•	Datos repetidos en múltiples archivos.
+	•	Información inconsistente y poco confiable.
+	•	Enfoque de bases de datos (desde 1960):
+	•	Diseñar datos para representar a toda la empresa.
+	•	Evita duplicación de datos.
+	•	Define subconjuntos para distintos usuarios/aplicaciones.
+
+¿Qué es una base de datos?
+	•	Colección de archivos interrelacionados, cuidadosamente diseñados.
+	•	Deben minimizar la repetición de datos.
+	•	Ejemplo: archivos de alumnos, cursos e inscripciones.
+
+¿Cuándo conviene usar bases de datos?
+	•	Cuando hay archivos interrelacionados.
+	•	Varios usuarios requieren acceder a la información.
+	•	Ejemplos: empresa de manufactura, padrón electoral, directorios.
+
+DBMS (Database Management System):
+	•	Definición: Conjunto de datos + programas para gestionarlos.
+	•	Objetivo: Proveer un entorno eficiente y conveniente para almacenar y extraer información.
+	•	Funciones principales:
+	•	Definición y gestión de estructuras de almacenamiento.
+	•	Seguridad y recuperación ante fallos.
+	•	Control de accesos y concurrencia.
+
+Objetivos del sistema de bases de datos:
+	•	Evitar redundancia e inconsistencia.
+	•	Permitir acceso fácil y flexible a los datos.
+	•	Evitar anomalías de acceso concurrente.
+	•	Controlar seguridad e integridad de la información.
+
+Problemas del enfoque tradicional (archivos):
+	•	Datos aislados en diferentes formatos.
+	•	Dificultad para generar reportes no previstos.
+	•	Riesgo de inconsistencias por múltiples accesos simultáneos.
+	•	Limitada seguridad por falta de control de acceso.
+	•	Complicada gestión de integridad.
+
+Funciones del Gestor de Base de Datos:
+	•	Traducción de sentencias DML a comandos del sistema de archivos.
+	•	Implantación de integridad: verifica cumplimiento de restricciones.
+	•	Seguridad: controla qué usuarios acceden a qué datos.
+	•	Backups y recuperación ante fallos.
+	•	Control de concurrencia: mantiene consistencia cuando hay múltiples usuarios accediendo.

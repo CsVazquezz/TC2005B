@@ -1,0 +1,65 @@
+Diagramas de Secuencia en UML
+
+Introducción
+- Los diagramas de secuencia son parte de los diagramas de interacción en UML.
+- Muestran la interacción entre objetos a lo largo del tiempo de manera secuencial.
+- Representan el flujo de mensajes entre objetos participantes en un escenario específico.
+- Son fundamentales para modelar los aspectos dinámicos de los sistemas.
+
+Elementos básicos
+1. Línea de vida:
+   - Representa un participante (objeto, clase o actor) en la interacción.
+   - Se dibuja como una línea vertical desde el objeto, mostrando su existencia temporal.
+   - El tiempo fluye de arriba hacia abajo.
+
+2. Mensajes:
+   - Comunicación entre objetos representada por flechas horizontales.
+   - Tipos principales:
+     * Síncronos: El emisor espera respuesta antes de continuar (flecha sólida con punta llena).
+     * Asíncronos: El emisor continúa sin esperar respuesta (flecha sólida con punta abierta).
+     * Retorno: Respuesta a un mensaje previo (flecha punteada).
+
+3. Activación:
+   - Rectángulo vertical sobre la línea de vida que indica cuándo un objeto está ejecutando operaciones.
+   - Muestra el tiempo durante el cual un método está activo.
+
+4. Objetos:
+   - Representados en la parte superior del diagrama.
+   - Formato: nombreObjeto:Clase o :Clase (si no se especifica el nombre).
+   - Pueden ser creados y destruidos durante la secuencia.
+
+Construcciones avanzadas
+1. Creación y destrucción de objetos:
+   - Mensaje de creación: flecha apuntando a un objeto nuevo.
+   - Destrucción: X al final de la línea de vida de un objeto.
+
+2. Mensajes recurrentes:
+   - Loops: Repetición de mensajes bajo una condición.
+   - Representados con un recuadro con etiqueta "loop [condición]".
+
+3. Condiciones:
+   - Fragmentos combinados con operador "alt" para representar caminos alternativos.
+   - Similares a estructuras if-then-else en programación.
+
+4. Paralelismo:
+   - Fragmentos combinados con operador "par" para mensajes concurrentes.
+   - Útil para modelar operaciones que ocurren simultáneamente.
+
+Aplicaciones
+- Especificar escenarios de casos de uso.
+- Documentar y validar la lógica de interacciones.
+- Descubrir servicios y responsabilidades de clases.
+- Comprender la implementación detallada de los procesos del sistema.
+
+Ventajas
+- Muestra el orden temporal exacto de las interacciones.
+- Clarifica roles y responsabilidades de los objetos.
+- Proporciona una vista detallada del comportamiento en tiempo de ejecución.
+- Ayuda a identificar cuellos de botella en los procesos.
+
+Mejores prácticas
+- Mantener el diagrama enfocado en un solo escenario o caso de uso.
+- Limitar el número de objetos para mantener la claridad.
+- Incluir solo los mensajes relevantes para el escenario específico.
+- Utilizar notas para aclarar comportamientos complejos o excepciones.
+- Organizar los objetos de izquierda a derecha según su primera activación.

@@ -1,0 +1,50 @@
+Introducción a la Administración de Proyectos
+	•	Objetivo del curso:
+	•	Aprender técnicas y conocimientos para administrar proyectos de forma eficiente.
+	•	Aplicar mejores prácticas del PMI para optimizar recursos.
+	•	Temario general (según PMBOK):
+	•	Integración
+	•	Comunicación
+	•	Alcance
+	•	Calendario (Tiempo)
+	•	Costo
+	•	Calidad
+	•	Riesgo
+	•	Recursos humanos
+	•	Aprovisionamiento
+
+
+Datos sobre proyectos (Chaos Report y otros estudios):
+	•	Solo el 16.2% de los proyectos son exitosos (Chaos Report 1994)
+	•	70% tienen fallas parciales (expectativas, tiempo o costo)
+	•	61% fracasaron (KPMG, 1997)
+	•	40% no cumplen expectativas (Conference Board, 2001)
+	•	51% de implementaciones ERP fallidas (Robbins-Gioia, 2001)
+	•	Causas comunes de fracaso:
+	•	Requerimientos cambiantes o incompletos
+	•	Poca participación de usuarios
+	•	Falta de conocimientos técnicos
+	•	Uso inadecuado de herramientas
+	•	Expectativas poco realistas
+	•	Falta de apoyo gerencial
+	•	Gestión deficiente
+
+
+
+Conceptos clave
+	•	Proyecto: esfuerzo temporal para crear un producto, servicio o resultado único.
+	•	Administración de proyectos: aplicación de conocimientos, habilidades y herramientas para cumplir los requerimientos del proyecto.
+	•	PMI: organización sin fines de lucro que profesionaliza la administración de proyectos. Fundada en 1969, creadora del PMBOK.
+	•	Guía PMBOK: cuerpo de conocimiento aceptado mundialmente que describe el entorno, estructura, procesos y vocabulario común de los proyectos.
+
+
+Áreas del PMBOK:
+	•	Integración: coordinar todos los elementos del proyecto (plan, ejecución, cambios).
+	•	Comunicación: gestionar toda la información del proyecto (generar, distribuir, almacenar).
+	•	Alcance: asegurar que se haga solo el trabajo necesario y que el resultado cumpla especificaciones.
+	•	Calendario y costo: planear secuencia de actividades, asignar recursos y controlar gastos.
+	•	Calidad: cumplir necesidades y mejorar desempeño mediante mejora continua.
+	•	Riesgos: identificar y actuar ante eventos externos que pueden afectar el proyecto.
+	•	Recursos humanos: organizar y motivar al equipo con participación activa.
+	•	Aprovisionamiento: adquirir bienes/servicios externos y gestionar contratos/proveedores.
+

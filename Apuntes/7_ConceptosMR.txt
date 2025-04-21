@@ -1,0 +1,48 @@
+Conceptos Básicos del Modelo Relacional
+
+Introducción
+- Propuesto por Codd a finales de los 60s como un modelo basado en la teoría de relaciones.
+- Objetivos: independencia física, independencia lógica, flexibilidad, uniformidad y sencillez.
+- El modelo representa datos como relaciones (tablas) que varían con el tiempo.
+- Fundamento de SQL basado en álgebra relacional y teoría de conjuntos.
+
+Relación
+- Objeto fundamental del modelo relacional derivado de la teoría de conjuntos.
+- Una relación es un subconjunto del producto cartesiano de dominios.
+- El esquema de la relación se denota como R(D1, D2, D3, ...Dk).
+- Las relaciones pueden representarse como tablas donde las filas son tuplas.
+
+Conceptos clave
+- Intensión o esquema: parte definitoria y estática (cabecera de la tabla).
+- Extensión: conjunto de tuplas que conforman la relación (filas de la tabla).
+- Dominio: conjunto finito de valores homogéneos y atómicos.
+- Atributo: papel que tiene un determinado dominio en una relación.
+
+Llaves
+- Llave primaria: atributo o conjunto de atributos que identifica de manera única cada tupla.
+- Llave compuesta: formada por múltiples atributos.
+- Llave foránea: atributos que corresponden a la llave primaria de otra relación.
+- Superllaves: conjuntos de atributos que contienen una llave.
+
+Restricciones
+- Inherentes: derivadas de la definición de relación (no hay tuplas duplicadas, orden irrelevante).
+- De usuario: definidas sobre atributos, tuplas o dominios para validar ocurrencias.
+- Integridad referencial: valores de llave foránea deben coincidir con valores de llave primaria.
+
+Operaciones con llaves foráneas
+- Restringida: impide borrado/modificación si existen referencias.
+- En cascada: propaga cambios a todas las relaciones referenciadas.
+- Puesta a nulos: establece valores nulos en referencias cuando se borra la entidad referenciada.
+- Puesta a valor por defecto: usa un valor predeterminado.
+- Procedimiento personalizado: ejecuta código definido por el usuario.
+
+Álgebra Relacional
+- Conjunto de operadores que actúan sobre relaciones para producir otras relaciones.
+- Operadores básicos:
+  * Unión, intersección y diferencia (operadores de conjuntos)
+  * Proyección (selecciona columnas)
+  * Selección (selecciona filas según condición)
+  * Join Natural (combina tablas por columnas comunes)
+  * Teta-Join (combina tablas según condición específica)
+  * Producto cartesiano (todas las combinaciones posibles)
+  * División (relacionado con cuantificador universal)

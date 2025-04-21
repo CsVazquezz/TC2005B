@@ -1,0 +1,51 @@
+Normalización
+
+Introducción
+- La normalización es el proceso de simplificar la relación entre los campos de un registro.
+- Busca obtener una estructura estable y lógica que evite anomalías de almacenamiento.
+- Una base de datos bien diseñada tiene mayor esperanza de vida y mejor desempeño.
+- Reduce riesgos como la redundancia de información e inconsistencia de datos.
+
+Razones para normalizar
+- Estructurar los datos para representar relaciones pertinentes.
+- Permitir recuperación sencilla de datos en consultas y reportes.
+- Simplificar el mantenimiento (actualizaciones, inserciones y borrados).
+- Reducir la necesidad de reestructurar cuando surjan nuevas aplicaciones.
+
+Pasos para normalizar
+1. Descomponer grupos de datos en registros bidimensionales.
+2. Eliminar relaciones donde los datos no dependan completamente de la llave primaria.
+3. Eliminar relaciones que contengan dependencias transitivas.
+
+Formas normales
+Son técnicas para prevenir anomalías en las tablas. Cada forma normal impone restricciones más estrictas.
+
+Primera Forma Normal (1FN)
+- Una relación está en 1FN si cada celda contiene valores atómicos (no divisibles).
+- Cada columna debe contener valores del mismo tipo.
+- Cada columna debe tener un nombre único.
+- No debe haber filas idénticas.
+
+Segunda Forma Normal (2FN)
+- Una relación está en 2FN si está en 1FN y todos los atributos no primos (no llaves) dependen completamente de la llave primaria.
+- Si una tabla tiene una sola columna como llave primaria, automáticamente está en 2FN.
+
+Tercera Forma Normal (3FN)
+- Una relación está en 3FN si está en 2FN y no existen dependencias transitivas.
+- Una dependencia transitiva ocurre cuando un atributo A determina a B, y B determina a C (pero B no determina a A).
+- Elimina la posibilidad de llegar a un atributo por múltiples caminos.
+
+Forma Normal de Boyce-Codd (FNBC)
+- Una relación está en FNBC si cada determinante es una llave candidata.
+- Un determinante es un atributo o conjunto de atributos que determina funcionalmente a otro.
+- Es una versión más estricta de la 3FN.
+
+Cuarta Forma Normal (4FN)
+- Trata con dependencias de valores múltiples.
+- Una relación está en 4FN si está en FNBC y no tiene dependencias multivaluadas no triviales.
+- Se soluciona dividiendo la tabla en múltiples tablas, cada una con un solo atributo multivaluado.
+
+Quinta Forma Normal (5FN)
+- Trata con dependencias de join (producto).
+- Una relación está en 5FN si no puede dividirse en tablas más pequeñas sin perder información cuando se reconstruye mediante joins.
+- Se relaciona con la forma de manejar entidades con especializaciones o roles
